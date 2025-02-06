@@ -19,17 +19,86 @@
       display: block;
     }
     .timer {
-      color: white;
-      font-size: 5vw;  /* Adjust font size based on viewport width */
-      text-align: center;
-      margin-top: 20px;
-      font-family: 'Arial', sans-serif;
-    }
+  color: #00bfff;  /* Blue text color */
+  font-size: 5vw;  /* Adjust font size based on viewport width */
+  text-align: center;
+  margin-top: 20px; /* Adjust as needed for spacing from the top */
+  font-family: 'Arial', sans-serif;
+  position: absolute; /* This positions it absolutely relative to the body */
+  top: 20px;  /* Adjust this value to move it further down or up */
+  left: 50%;  /* Horizontally center the timer */
+  transform: translateX(-50%);  /* Ensure it's exactly centered */
+  text-shadow: 
+    0 0 5px #ff1493, 
+    0 0 10px #ff1493, 
+    0 0 15px #ff1493, 
+    0 0 20px #ff1493, 
+    0 0 25px #ff1493, 
+    0 0 30px #ff1493, 
+    0 0 35px #ff1493; /* Pink neon glow */
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Neon glow animation */
+@keyframes neonGlow {
+  0% {
+    text-shadow: 
+      0 0 5px #ff1493, 
+      0 0 10px #ff1493, 
+      0 0 15px #ff1493, 
+      0 0 20px #ff1493, 
+      0 0 25px #ff1493, 
+      0 0 30px #ff1493, 
+      0 0 35px #ff1493;
+  }
+  50% {
+    text-shadow: 
+      0 0 10px #ff1493, 
+      0 0 20px #ff1493, 
+      0 0 30px #ff1493, 
+      0 0 40px #ff1493, 
+      0 0 50px #ff1493, 
+      0 0 60px #ff1493, 
+      0 0 70px #ff1493;
+  }
+  100% {
+    text-shadow: 
+      0 0 5px #ff1493, 
+      0 0 10px #ff1493, 
+      0 0 15px #ff1493, 
+      0 0 20px #ff1493, 
+      0 0 25px #ff1493, 
+      0 0 30px #ff1493, 
+      0 0 35px #ff1493;
+  }
+}
+
+/* Style for the "Something big is coming" text */
+.subtext {
+  color: #00bfff;  /* Pink text color */
+  font-size: 3vw;  /* Adjust font size based on viewport width */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  position: absolute;
+  top: 15vh;  /* Adjust the position under the timer */
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 
+    0 0 5px #ff1493, 
+    0 0 10px #ff1493, 
+    0 0 15px #ff1493, 
+    0 0 20px #ff1493, 
+    0 0 25px #ff1493, 
+    0 0 30px #ff1493, 
+    0 0 35px #ff1493; /* Pink neon glow */
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
   </style>
 </head>
 <body>
   <canvas id="canvas"></canvas>
   <div class="timer" id="timer"></div>
+  <div class="subtext">Something big is coming</div>
 
   <script>
     // Initialize the canvas
