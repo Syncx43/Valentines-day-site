@@ -9,18 +9,23 @@
   font-family: 'Baloo 2', sans-serif;
 }
 
-    body {
-      background-color: #000;
-      margin: 0;
-      overflow: hidden;
-      background-repeat: no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100vh;
-      font-family: 'Baloo 2', sans-serif; /* Apply Balloon font to body */
-    }
+body {
+  background-color: #000;
+  margin: 0;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensure the background fills the entire screen */
+  background-attachment: fixed; /* Fix the background so it stays in place when scrolling */
+  background-position: center; /* Center the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Baloo 2', sans-serif;
+}
+
+    
     canvas {
       display: block;
     }
