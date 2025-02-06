@@ -464,7 +464,7 @@ musicButton.addEventListener('click', () => {
       var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-      document.getElementById('timer').textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      document.getElementById('timer').textContent = `${days}D ${hours}H ${minutes}M ${seconds}S`;
     }
 
     setInterval(updateTimer, 1000);  // Update timer every second
