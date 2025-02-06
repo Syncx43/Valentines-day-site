@@ -99,6 +99,43 @@
     0 0 35px #ff1493; /* Pink neon glow */
   animation: neonGlow 1.5s ease-in-out infinite alternate;
 }
+
+/* Style for the music button */
+#musicButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+    transition: transform 0.3s ease;
+  }
+
+  #musicButton:hover {
+    transform: scale(1.1);
+  }
+
+  #musicIcon {
+    width: 30px;
+    height: 30px;
+    filter: invert(50%) sepia(100%) saturate(200%) hue-rotate(200deg);
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+  }
+
+  /* Neon glow animation for the music logo */
+  @keyframes neonGlow {
+    0% {
+      text-shadow: 0 0 5px #ff1493, 0 0 10px #ff1493, 0 0 15px #00bfff;
+    }
+    50% {
+      text-shadow: 0 0 20px #ff1493, 0 0 30px #00bfff, 0 0 40px #00bfff;
+    }
+    100% {
+      text-shadow: 0 0 5px #ff1493, 0 0 10px #ff1493, 0 0 15px #00bfff;
+    }
+  }
   </style>
 </head>
 <body>
@@ -107,6 +144,32 @@
     <source src="music.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
+
+<!-- Music Button -->
+<button id="musicButton" onclick="toggleMusic()">
+  <img src="music-icon.png" alt="Music" id="musicIcon">
+</button>
+
+  <script>
+    const audio = document.getElementById('backgroundMusic');
+    const musicButton = document.getElementById('musicButton');
+    audio.oncanplaythrough = () => console.log('Audio is ready to play');
+    audio.onerror = () => console.log('Error loading audio');
+
+    let isPlaying = true;
+
+// Toggle audio play/pause when clicking the music button
+musicButton.addEventListener('click', () => {
+  if (isPlaying) {
+    audio.pause();
+    isPlaying = false;
+  } else {
+    audio.play();
+    isPlaying = true;
+  }
+});
+  </script>
+  
   <canvas id="canvas"></canvas>
   <div class="timer" id="timer"></div>
   <div class="subtext">SOMETHING IS COMING</div>
